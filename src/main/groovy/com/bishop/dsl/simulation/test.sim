@@ -1,0 +1,18 @@
+simscript {
+
+    when (altitude >= 10000) {
+        sv01 = 0
+    }
+
+    whenever (sv02 > 1) until (altitude >= 20000) {
+        sv03 = 0
+    }
+
+    if (altitude == 25000) {
+        malf "sv02" offset -5
+    }
+    if (altitude == 30000) {
+        restore "sv02"
+    }
+
+}
