@@ -1,0 +1,20 @@
+[
+  [
+    {"name": "axp", "value": 108.66},
+    {"name": "aapl", "value": 226.41},
+    {"name": "ba", "value": 355.46},
+    {"name": "dis", "value": 110.07}
+  ],
+  [
+    {"name": "axp", "value": 107.46},
+    {"name": "aapl", "value": 241.67},
+    {"name": "ba", "value": 340.25},
+    {"name": "dis", "value": 113.15}
+  ],
+  [
+    {"name": "axp", "value": 106.46},
+    {"name": "aapl", "value": 261.43},
+    {"name": "ba", "value": 333.51},
+    {"name": "dis", "value": 115.93}
+  ]
+]
