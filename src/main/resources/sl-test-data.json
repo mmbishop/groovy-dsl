@@ -16,5 +16,17 @@
     {"name": "aapl", "value": 261.43},
     {"name": "ba", "value": 333.51},
     {"name": "dis", "value": 115.93}
+  ],
+  [
+    {"name": "axp", "value": 107.11},
+    {"name": "aapl", "value": 292.71},
+    {"name": "ba", "value": 299.46},
+    {"name": "dis", "value": 116.05}
+  ],
+  [
+    {"name": "axp", "value": 109.41},
+    {"name": "aapl", "value": 310.53},
+    {"name": "ba", "value": 301.23},
+    {"name": "dis", "value": 117.31}
   ]
 ]

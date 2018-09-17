@@ -44,7 +44,12 @@ def static what(linkingVerb) {
     }]
 }
 
+def static the(thing) {
+    [at: { place -> thing(place)}]
+}
+
 what is the temperature at "Austin"
 what is the wind at "Houston"
 what are the conditions at "Tokyo"
 
+println the temperature at "Houston"

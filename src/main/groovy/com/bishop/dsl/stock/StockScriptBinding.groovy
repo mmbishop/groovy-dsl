@@ -6,6 +6,7 @@ class StockScriptBinding extends Binding {
     private Stock aapl
     private Stock ba
     private Stock dis
+    private Map<String, Stock> stockMap
 
     public void initialize() {
         axp = createStock("American Express", 100)
@@ -16,6 +17,11 @@ class StockScriptBinding extends Binding {
         setVariable("aapl", aapl)
         setVariable("ba", ba)
         setVariable("dis", dis)
+        stockMap = ["axp": axp, "aapl": aapl, "ba": ba, "dis": dis]
+    }
+
+    public void updateStock(String abbr, StockValue value) {
+        stockMap[abbr].value = value
     }
 
     private Stock createStock(String name, int shares) {

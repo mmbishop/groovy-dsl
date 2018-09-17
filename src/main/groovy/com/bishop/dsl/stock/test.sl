@@ -1,4 +1,3 @@
-show price of dis
 show price of axp
 show shares of axp
 buy 20 shares axp
