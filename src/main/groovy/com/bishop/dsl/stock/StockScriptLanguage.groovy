@@ -4,7 +4,6 @@ class StockScriptLanguage {
 
     def static shares = {}
     def static price = {}
-    def static prices = {}
     def static value = {}
     def static of = {}
 
