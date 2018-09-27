@@ -20,8 +20,8 @@ class StockScriptBinding extends Binding {
         stockMap = ["axp": axp, "aapl": aapl, "ba": ba, "dis": dis]
     }
 
-    public void updateStock(String abbr, StockValue value) {
-        stockMap[abbr].value = value
+    public void updateStock(String abbr, StockPrice price) {
+        stockMap[abbr].price = price
     }
 
     private Stock createStock(String name, int shares) {

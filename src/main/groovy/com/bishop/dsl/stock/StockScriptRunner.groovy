@@ -19,7 +19,7 @@ class StockScriptRunner {
         List<List<StockDataValue>> stockData = readStockData(dataFileName)
         stockData.each { stockList ->
             stockList.each { stock ->
-                binding.updateStock(stock.stockAbbr, new StockValue(number: stock.value, unit: "usd"))
+                binding.updateStock(stock.stockAbbr, new StockPrice(number: stock.value, unit: "usd"))
             }
             shell.evaluate(script)
             println "----------"
@@ -36,7 +36,7 @@ class StockScriptRunner {
             record.each { stock ->
                 StockDataValue sdv = new StockDataValue()
                 sdv.setStockAbbr(stock["name"])
-                sdv.setValue(stock["value"])
+                sdv.setValue(stock["price"])
                 stockValueList << sdv
             }
             stockData << stockValueList

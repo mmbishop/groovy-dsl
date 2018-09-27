@@ -1,6 +1,6 @@
 package com.bishop.dsl.stock
 
-class StockValue {
+class StockPrice {
     def number
     def unit
 

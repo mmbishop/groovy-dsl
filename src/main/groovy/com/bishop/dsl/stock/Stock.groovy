@@ -2,7 +2,7 @@ package com.bishop.dsl.stock
 
 class Stock {
     private String name
-    private StockValue value
+    private StockPrice price
     private int shares
 
     String getName() {
@@ -13,12 +13,12 @@ class Stock {
         this.name = name
     }
 
-    StockValue getValue() {
-        return value
+    StockPrice getPrice() {
+        return price
     }
 
-    void setValue(StockValue value) {
-        this.value = value
+    void setPrice(StockPrice price) {
+        this.price = price
     }
 
     int getShares() {

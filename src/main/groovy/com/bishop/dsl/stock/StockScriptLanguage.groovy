@@ -26,17 +26,17 @@ class StockScriptLanguage {
             [of: { stock -> println "You have ${stock.shares} shares of ${stock.name}" }]
         }
         else if (what == price) {
-            [of: { stock -> println "The price of ${stock.name} is ${stock.value}" }]
+            [of: { stock -> println "The price of ${stock.name} is ${stock.price}" }]
         }
         else if (what == value) {
-            [of: { stock -> println "The total value of your shares of ${stock.name} is ${new StockValue(number: stock.shares * stock.value.value, unit: stock.value.unit)}"}]
+            [of: { stock -> println "The total price of your shares of ${stock.name} is ${new StockPrice(number: stock.shares * stock.price.value, unit: stock.price.unit)}"}]
         }
     }
 
     def static when(stock) {
         [under: { Number price ->
             [then: { closure ->
-                if (stock.value.value < price) {
+                if (stock.price.value < price) {
                     closure.delegate = this
                     closure()
                 }
@@ -44,7 +44,7 @@ class StockScriptLanguage {
         },
          over: { Number price ->
              [then: { closure ->
-                 if (stock.value.value > price) {
+                 if (stock.price.value > price) {
                      closure.delegate = this
                      closure()
                  }
