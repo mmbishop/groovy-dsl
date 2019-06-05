@@ -5,7 +5,7 @@ import static com.bishop.dsl.email.Email.email
 class EmailDemo {
 
     static void main(String[] args) {
-        def recipients = ["recipient@gmail.com"]
+        def recipients = ["tend2dv8@gmail.com"]
         def emails = []
 
         recipients.each { recipient ->
@@ -14,8 +14,8 @@ class EmailDemo {
                 from "sender@gmail.com"
                 subject "Greetings"
                 body "Wassup!"
-                image "/path/to/image1"
-                image "/path/to/image2"
+                image "/Users/Michael/Pictures/david.jpg"
+                image "/Users/Michael/Pictures/samuel.jpg"
             }
         }
 
