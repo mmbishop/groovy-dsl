@@ -11,7 +11,7 @@ class EmailDemo {
         recipients.each { recipient ->
             emails << email {
                 to recipient
-                from "sender@gmail.com"
+                from "michael.bishop@improving.com"
                 subject "Greetings"
                 body "Wassup!"
                 image "/Users/Michael/Pictures/david.jpg"
