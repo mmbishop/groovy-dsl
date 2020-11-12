@@ -28,7 +28,7 @@ class EmailSender {
     void sendEmail(String recipient, String sender, String subjectText, String bodyText, Map<String, List<String>> attachmentMap) {
         Email from = new Email(sender)
         Email to = new Email(recipient)
-        Content content = new Content("text/html", "<html>" + bodyText + "</html>")
+        Content content = new Content("text/html", getContents(bodyText, attachmentMap))
         Mail mail = new Mail(from, subjectText, to, content)
         Base64 base64 = new Base64()
         Tika tika = new Tika()
@@ -61,6 +61,21 @@ class EmailSender {
 
     String getFilename(String path) {
         return path.substring(path.lastIndexOf(System.getProperty("file.separator")) + 1)
+    }
+
+    String getContents(String bodyText, Map<String, List<String>> attachmentMap) {
+        StringBuilder contents = new StringBuilder("<html>")
+        contents.append(bodyText)
+        if (attachmentMap && ! attachmentMap.isEmpty()) {
+            contents.append("<p/>")
+            attachmentMap.each { attachmentType, attachmentList ->
+                attachmentList.each { attachment ->
+                    contents.append(attachmentType).append(" ").append(attachment[0].toString()).append(" is attached.<br>")
+                }
+            }
+        }
+        contents.append("</html>")
+        return contents.toString()
     }
 
     String getApiKey() {
