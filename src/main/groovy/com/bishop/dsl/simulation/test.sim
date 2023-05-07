@@ -1,6 +1,6 @@
 simscript {
 
-    malfunction "m1" variable "sv02" offset -5
+    def m1 = malfunction "sv02" offset -5
 
     when (altitude >= 10000) {
         sv01 = 0
@@ -10,11 +10,11 @@ simscript {
         sv03 = 0
     }
 
-    if (altitude == 25000) {
-        insert "m1"
+    when (altitude == 25000) {
+        insert m1
     }
-    if (altitude == 30000) {
-        remove "m1"
+    when (altitude == 30000) {
+        remove m1
     }
 
 }

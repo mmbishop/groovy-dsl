@@ -6,7 +6,6 @@ class Simulation {
     static whenHasFired = [:]
     static whenCounter = 0
     static wheneverCounter = 0
-    static Map<String, Malfunction> malfunctionMap = [:]
 
     static Binding binding
 
@@ -44,28 +43,20 @@ class Simulation {
         }]
     }
 
-    def malfunction(String name) {
-        ["variable": { variableName ->
-            ["offset": { offset ->
-                Malfunction malf = (Malfunction) binding.getVariable(variableName + "Malf")
-                malf.offset = offset
-                malfunctionMap[name] = malf
-            }]
+    def malfunction(String variableName) {
+        ["offset": { offset ->
+            Malfunction malf = (Malfunction) binding.getVariable(variableName + "Malf")
+            malf.offset = offset
+            return malf
         }]
     }
 
-    def insert(String malfunctionName) {
-        Malfunction malf = malfunctionMap[malfunctionName]
-        if (malf) {
-            malf.active = true
-        }
+    def insert(Malfunction malfunction) {
+        malfunction.active = true
     }
 
-    def remove(String malfunctionName) {
-        Malfunction malf = malfunctionMap[malfunctionName]
-        if (malf) {
-            malf.active = false
-        }
+    def remove(Malfunction malfunction) {
+        malfunction.active = false
     }
 
 }
