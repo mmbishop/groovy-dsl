@@ -1,5 +1,7 @@
 simscript {
 
+    malfunction "m1" variable "sv02" offset -5
+
     when (altitude >= 10000) {
         sv01 = 0
     }
@@ -9,10 +11,10 @@ simscript {
     }
 
     if (altitude == 25000) {
-        malf "sv02" offset -5
+        insert "m1"
     }
     if (altitude == 30000) {
-        restore "sv02"
+        remove "m1"
     }
 
 }
