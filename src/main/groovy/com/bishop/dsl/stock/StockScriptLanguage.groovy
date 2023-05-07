@@ -5,17 +5,16 @@ class StockScriptLanguage {
     def static shares = {}
     def static price = {}
     def static value = {}
-    def static of = {}
 
     def static sell(shareCount) {
-        [shares: { stock ->
+        [of: { stock ->
             println "Selling $shareCount shares of ${stock.name}"
             stock.shares -= shareCount
         }]
     }
 
     def static buy(shareCount) {
-        [shares: { stock ->
+        [of: { stock ->
             println "Buying $shareCount shares of ${stock.name}"
             stock.shares += shareCount
         }]

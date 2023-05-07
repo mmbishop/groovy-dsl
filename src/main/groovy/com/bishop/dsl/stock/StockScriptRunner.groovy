@@ -21,7 +21,9 @@ class StockScriptRunner {
             stockList.each { stock ->
                 binding.updateStock(stock.stockAbbr, new StockPrice(number: stock.value, unit: "usd"))
             }
-            shell.evaluate(script)
+            use(NumberCategory) {
+                shell.evaluate(script)
+            }
             println "----------"
         }
     }
