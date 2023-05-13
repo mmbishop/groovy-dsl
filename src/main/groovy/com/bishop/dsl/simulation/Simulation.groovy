@@ -44,7 +44,7 @@ class Simulation {
     }
 
     def malfunction(String variableName) {
-        ["offset": { offset ->
+        [offset: { offset ->
             Malfunction malf = (Malfunction) binding.getVariable(variableName + "Malf")
             malf.offset = offset
             return malf

@@ -20,6 +20,12 @@ class StockScriptLanguage {
         }]
     }
 
+    def static of(stock) {
+        [buy: { shareCount ->
+            new StockPurchase(stock, shareCount)
+        }]
+    }
+
     def static show(what) {
         if (what == shares) {
             [of: { stock -> println "You have ${stock.shares} shares of ${stock.name}" }]
@@ -53,6 +59,21 @@ class StockScriptLanguage {
 
     def static total(what) {
         [of: { stock -> stock.shares }]
+    }
+
+    static class StockPurchase {
+        def stock
+        def shareCount
+
+        StockPurchase(stock, shareCount) {
+            this.stock = stock
+            this.shareCount = shareCount
+        }
+
+        def getShares() {
+            println "Buying $shareCount shares of ${stock.name}"
+            stock.shares += shareCount
+        }
     }
 
 }
