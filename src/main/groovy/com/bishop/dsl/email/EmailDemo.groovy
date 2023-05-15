@@ -5,17 +5,17 @@ import static com.bishop.dsl.email.Email.email
 class EmailDemo {
 
     static void main(String[] args) {
-        def recipients = ["tend2dv8@gmail.com"]
+        def recipients = ["curmudgeoncoder@gmail.com"]
         def emails = []
 
         recipients.each { recipient ->
             emails << email {
                 to recipient
-                from "michael.bishop@improving.com"
+                from "tend2dv8@gmail.com"
                 subject "Greetings from Groovy DSL"
                 body "Wassup!"
-                image "/Users/Michael/Pictures/david.jpg"
-                image "/Users/Michael/Pictures/samuel.jpg"
+                image "/Users/Michael/Pictures/David/david-school-portrait-2020-2021.jpg"
+                image "/Users/Michael/Pictures/Sam/sam-school-portrait-2020-2021.jpg"
             }
         }
 

@@ -40,36 +40,12 @@ class Email {
         attachmentMap[methodName] << args
     }
 
-    String getRecipient() {
-        return recipient
-    }
-
-    String getSender() {
-        return sender
-    }
-
-    String getSubjectText() {
-        return subjectText
-    }
-
-    String getBodyText() {
-        return bodyText
-    }
-
-    Map<String, List<String>> getAttachmentMap() {
-        return attachmentMap
-    }
-
-    void setAttachmentMap(Map<String, List<String>> attachmentMap) {
-        this.attachmentMap = attachmentMap
-    }
-
     def getSend() {
         send()
     }
 
     void send() {
-        new EmailSender().sendEmail(recipient, sender, subjectText, bodyText, attachmentMap);
+        new EmailSender().sendEmail(recipient, sender, subjectText, bodyText, attachmentMap)
     }
 
 }
