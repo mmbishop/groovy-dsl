@@ -37,12 +37,14 @@ class EmailSender {
                 String attachmentPath = value[0]
                 Attachments attachments = new Attachments()
                 File file = new File(attachmentPath)
-                String encodedString = base64.encodeAsString(file.bytes)
-                attachments.setContent(encodedString)
-                attachments.setDisposition("attachment")
-                attachments.setFilename(getFilename(attachmentPath))
-                attachments.setType(tika.detect(attachmentPath))
-                mail.addAttachments(attachments)
+                if (file.exists()) {
+                    String encodedString = base64.encodeAsString(file.bytes)
+                    attachments.setContent(encodedString)
+                    attachments.setDisposition("attachment")
+                    attachments.setFilename(getFilename(attachmentPath))
+                    attachments.setType(tika.detect(attachmentPath))
+                    mail.addAttachments(attachments)
+                }
             }
         }
         SendGrid sg = new SendGrid(getApiKey())

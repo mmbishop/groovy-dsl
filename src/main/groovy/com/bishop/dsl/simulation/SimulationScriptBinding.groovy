@@ -19,17 +19,19 @@ class SimulationScriptBinding extends Binding {
     }
 
     public void setVariable(String name, Object value) {
-        if ("sv01" == name) {
-            sv01 = value
-            super.setVariable("sv01", sv01)
-        }
-        else if ("sv02" == name) {
-            sv02 = value
-            super.setVariable("sv02", sv02)
-        }
-        else if ("sv03" == name) {
-            sv03 = value
-            super.setVariable("sv03", sv03)
+        switch (name) {
+            case "sv01":
+                sv01 = value
+                super.setVariable("sv01", sv01)
+                break
+            case "sv02":
+                sv02 = value
+                super.setVariable("sv02", sv02)
+                break
+            case "sv03":
+                sv03 = value
+                super.setVariable("sv03", sv03)
+                break
         }
     }
 
